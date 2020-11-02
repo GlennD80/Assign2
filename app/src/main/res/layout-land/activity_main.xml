@@ -69,10 +69,14 @@
         app:layout_constraintVertical_bias="0.116" />
 
     <TextView
-        android:id="@+id/SpareTxt"
+        android:id="@+id/EmailTxt"
         android:layout_width="370dp"
         android:layout_height="40dp"
         android:background="#CD2F65"
+        app:autoSizeTextType="uniform"
+        app:autoSizeMinTextSize="12sp"
+        app:autoSizeMaxTextSize="100sp"
+        app:autoSizeStepGranularity="2sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.044"
@@ -90,6 +94,7 @@
         android:layout_marginRight="96dp"
         android:configChanges="keyboardHidden|orientation"
         android:text="@string/send"
+        android:layout_gravity="end"
         app:backgroundTint="#2196F3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

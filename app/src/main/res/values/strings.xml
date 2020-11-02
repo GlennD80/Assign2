@@ -5,4 +5,10 @@
     <string name="explicit_intent_call_an_activity">Explicit Intent: Call an activity</string>
     <string name="button">Button</string>
     <string name="send">Send</string>
+    <string name="emailTo">To:</string>
+    <string name="to">To:</string>
+    <string name="subject">Subject:</string>
+    <string name="composeTxt">Compose:</string>
+    <string name="saveBtn">Save</string>
+    <string name="btnSave">Save</string>
 </resources>

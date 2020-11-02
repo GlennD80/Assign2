@@ -10,7 +10,14 @@
         android:id="@+id/OpenCam"
         android:layout_width="370dp"
         android:layout_height="80dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
         android:background="#F44336"
+        android:clickable="true"
+        android:focusable="true"
         android:gravity=""
         android:paddingStart="10dp"
         android:paddingLeft="10dp"
@@ -26,14 +33,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.024"
-        android:onClick="onClick"
-        android:clickable="true"
-        android:focusable="true" />
+        tools:ignore="OnClick" />
 
     <TextView
         android:id="@+id/ViewPic"
         android:layout_width="370dp"
         android:layout_height="80dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
         android:background="#8E329E"
         android:gravity=""
         android:paddingStart="10dp"
@@ -55,6 +65,11 @@
         android:id="@+id/CallAct"
         android:layout_width="370dp"
         android:layout_height="80dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
         android:background="#3AC635"
         android:gravity=""
         android:paddingStart="10dp"
@@ -73,9 +88,14 @@
         app:layout_constraintVertical_bias="0.048" />
 
     <TextView
-        android:id="@+id/SpareTxt"
+        android:id="@+id/EmailTxt"
         android:layout_width="370dp"
         android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
         android:background="#CD2F65"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -96,7 +116,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.934"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/SpareTxt"
+        app:layout_constraintTop_toBottomOf="@+id/EmailTxt"
         app:layout_constraintVertical_bias="0.033" />
 
 

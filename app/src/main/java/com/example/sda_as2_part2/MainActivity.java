@@ -4,19 +4,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.MediaController;
-import android.widget.TextView;
-import android.view.View;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+    private Button Sendbtn;
     TextView camera;
     TextView gallery;
+    TextView callact;
+    //TextView emailTxt;
+    //EditText mRecipientEt, mSubjectEt, mMessageEt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,13 +45,22 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        callact=(TextView)findViewById(R.id.CallAct);
+        callact.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent_callact = new Intent(MainActivity.this, SecondActivity.class);
+                startActivity(intent_callact);
+            }
+        });
 
+        Intent intent = getIntent();
+        String email_To = intent.getStringExtra("NAME");
+        String email_subject = intent.getStringExtra("EMAIL");
+        String email_compose = intent.getStringExtra("COMPOSE");
 
-
-
-
-
-
-
+        TextView emailTxt = findViewById(R.id.EmailTxt);
+        emailTxt.setText("To: "+email_To+"\nSubject: "+email_subject+ "\nContent: " +email_compose);
+        //emailTxt.setText(email_To+ "\n" +email_subject+ "\n" +email_compose);
     }
 }
