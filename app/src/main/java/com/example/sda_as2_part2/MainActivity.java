@@ -15,8 +15,6 @@ public class MainActivity extends AppCompatActivity {
     TextView camera;
     TextView gallery;
     TextView callact;
-    //TextView emailTxt;
-    //EditText mRecipientEt, mSubjectEt, mMessageEt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +58,13 @@ public class MainActivity extends AppCompatActivity {
         String email_compose = intent.getStringExtra("COMPOSE");
 
         TextView emailTxt = findViewById(R.id.EmailTxt);
-        emailTxt.setText("To: "+email_To+"\nSubject: "+email_subject+ "\nContent: " +email_compose);
+        //if (emailTxt != null) {
+            //emailTxt.setText("");
+        //}
+        //else
+        //{
+            emailTxt.setText("To: " + email_To + "\nSubject: " + email_subject + "\nContent: " + email_compose);
+        //}
         //emailTxt.setText(email_To+ "\n" +email_subject+ "\n" +email_compose);
     }
 }
