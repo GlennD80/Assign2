@@ -52,19 +52,39 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        TextView emailTxt = findViewById(R.id.EmailTxt);
+
         Intent intent = getIntent();
         String email_To = intent.getStringExtra("NAME");
         String email_subject = intent.getStringExtra("EMAIL");
         String email_compose = intent.getStringExtra("COMPOSE");
 
-        TextView emailTxt = findViewById(R.id.EmailTxt);
-        //if (emailTxt != null) {
-            //emailTxt.setText("");
-        //}
-        //else
-        //{
+        if (email_To != null && email_subject != null && email_compose != null)
             emailTxt.setText("To: " + email_To + "\nSubject: " + email_subject + "\nContent: " + email_compose);
-        //}
-        //emailTxt.setText(email_To+ "\n" +email_subject+ "\n" +email_compose);
+
+        Button emailSndBtn = findViewById(R.id.Sendbtn);
+        emailSndBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendEMail();
+            }
+
+            private void sendEMail() {
+                String[] recipients = email_To.split(",");
+
+                String email_To = intent.getStringExtra("NAME");
+                String email_subject = intent.getStringExtra("EMAIL");
+                String email_compose = intent.getStringExtra("COMPOSE");
+
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.putExtra(Intent.EXTRA_EMAIL, recipients);
+                intent.putExtra(Intent.EXTRA_SUBJECT, email_subject);
+                intent.putExtra(Intent.EXTRA_TEXT, email_compose);
+
+                intent.setType("message/rfc822");
+                startActivity(Intent.createChooser(intent, "Choose an email provider"));
+            }
+        });
     }
 }
+
