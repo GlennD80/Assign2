@@ -22,13 +22,18 @@ public class SecondActivity extends AppCompatActivity {
         EditText compose = findViewById(R.id.compose);
         Button saveBtn = findViewById(R.id.btnSave);
 
+        //save text in email fields
+        //onclick for save option
         saveBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                //string values for email details
                 String email_To = emailTo.getText().toString();
                 String email_subject = subject.getText().toString();
                 String email_compose = compose.getText().toString();
 
+                //intent to send email details to main activity
                 Intent intent = new Intent(SecondActivity.this, MainActivity.class);
                 intent.putExtra("NAME", email_To);
                 intent.putExtra("EMAIL", email_subject);
